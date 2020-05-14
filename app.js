@@ -1,19 +1,37 @@
-/* const button = document.querySelector('button')
-const input1 = document.getElementById('a')! as HTMLInputElement;
-const input2 = document.getElementById('b')! as HTMLInputElement;
-
-
-function add(num1: number, num2: number) {
-  return num1 + num2
+/* const person: {
+  name: string;
+  age: number;
+  hobbies: string[];
+  role: [number, string]
+} = {
+  name: 'Pablo',
+  age: 27,
+  hobbies: ['Sports', 'Traveling'],
+  role: [2, 'author']
+} */
+var Role;
+(function (Role) {
+    Role["ADMIN"] = "ADMIN";
+    Role[Role["READ_ONLY"] = 100] = "READ_ONLY";
+    Role[Role["AUTHOR"] = 101] = "AUTHOR";
+})(Role || (Role = {}));
+;
+var person = {
+    name: 'Pablo',
+    age: 27,
+    hobbies: ['Sports', 'Traveling'],
+    role: Role.ADMIN
+};
+// person.role.push('admin');
+// person.role[1] = 10 //error
+var favoriteActivities;
+// favoriteActivities = ['sport', 1] errorr because we have a number
+console.log(person.name);
+for (var _i = 0, _a = person.hobbies; _i < _a.length; _i++) {
+    var hobby = _a[_i];
+    console.log(hobby.toUpperCase());
+    // hobby.map() error
 }
-
-button.addEventListener('click', function() {
-  console.log(add(+input1.value, +input2.value))
-}) */
-function add(n1, n2) {
-    return n1 + n2;
+if (person.role == Role.ADMIN) {
+    console.log('is read only');
 }
-var number1 = 5;
-var number2 = 2.8;
-var result = add(number1, number2);
-console.log(result);

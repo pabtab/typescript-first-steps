@@ -1,23 +1,39 @@
-/* const button = document.querySelector('button')
-const input1 = document.getElementById('a')! as HTMLInputElement;
-const input2 = document.getElementById('b')! as HTMLInputElement;
+/* const person: {
+  name: string;
+  age: number;
+  hobbies: string[];
+  role: [number, string]
+} = {
+  name: 'Pablo',
+  age: 27,
+  hobbies: ['Sports', 'Traveling'],
+  role: [2, 'author']
+} */
 
 
-function add(num1: number, num2: number) {
-  return num1 + num2
+enum Role { ADMIN = 'ADMIN', READ_ONLY = 100, AUTHOR };
+
+const person = {
+  name: 'Pablo',
+  age: 27,
+  hobbies: ['Sports', 'Traveling'],
+  role: Role.ADMIN
 }
 
-button.addEventListener('click', function() {
-  console.log(add(+input1.value, +input2.value))
-}) */
+// person.role.push('admin');
+// person.role[1] = 10 //error
 
-function add(n1: number, n2: number) {
-  return n1 + n2
+let favoriteActivities: string[];
+// favoriteActivities = ['sport', 1] errorr because we have a number
+
+
+console.log(person.name)
+
+for (const hobby of person.hobbies) {
+  console.log(hobby.toUpperCase())
+  // hobby.map() error
 }
 
-const number1 = 5;
-const number2 = 2.8
-
-const result = add(number1, number2)
-
-console.log(result)
+if(person.role == Role.ADMIN) {
+  console.log('is read only')
+}
