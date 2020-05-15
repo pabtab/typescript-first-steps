@@ -1,39 +1,22 @@
-/* const person: {
-  name: string;
-  age: number;
-  hobbies: string[];
-  role: [number, string]
-} = {
-  name: 'Pablo',
-  age: 27,
-  hobbies: ['Sports', 'Traveling'],
-  role: [2, 'author']
-} */
+let userInput: unknown; //Better than any
+let username: string
 
+userInput = 5;
+userInput = 'somee'
 
-enum Role { ADMIN = 'ADMIN', READ_ONLY = 100, AUTHOR };
+//username = userInput //error
 
-const person = {
-  name: 'Pablo',
-  age: 27,
-  hobbies: ['Sports', 'Traveling'],
-  role: Role.ADMIN
+if (typeof userInput === 'string') {
+  username = userInput
 }
 
-// person.role.push('admin');
-// person.role[1] = 10 //error
-
-let favoriteActivities: string[];
-// favoriteActivities = ['sport', 1] errorr because we have a number
-
-
-console.log(person.name)
-
-for (const hobby of person.hobbies) {
-  console.log(hobby.toUpperCase())
-  // hobby.map() error
+function generateError(message: string, code: number): never {
+  throw {
+    message,
+    errorCode: code
+  }
 }
 
-if(person.role == Role.ADMIN) {
-  console.log('is read only')
-}
+const result = generateError('Error occurred', 500) // Never - return nothings
+
+console.log(result)
